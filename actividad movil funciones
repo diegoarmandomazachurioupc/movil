@@ -1,0 +1,133 @@
+/*2. Función que Muestra un Saludo*/
+
+void saludar() {
+  print('¡Hola! Bienvenido/a.');
+}
+
+/*3.Calculadora Básica*/
+double suma(double a, double b) {
+  return a + b;
+}
+double resta(double a, double b) {
+  return a - b;
+}
+double multiplicacion(double a, double b) {
+  return a * b;
+}
+double division(double a, double b) {
+  return a / b;
+}
+
+/*4. Función con Parámetro Obligatorio - Área de un Círculo*/
+double areaCirculo(double radio) {
+  return 3.1416 * radio * radio;
+}
+
+
+/*5. Función con Parámetros Nombrados - Información de Persona*/
+void informacionPersona({String nombre="diego", int edad=18, 
+                       String ciudad="valledupar"}) {
+  print('Nombre: $nombre, Edad: $edad, Ciudad: $ciudad');
+}
+
+/*7. Función Flecha para Verificar Número Par*/
+bool esPar(int numero) => numero % 2 == 0;
+
+/*6. Conversión de Temperatura  Celsius a Fahrenheit*/
+
+double celsiusToFahrenheit(double celsius) {
+  
+  return (celsius * 9/5) + 32;
+}
+
+
+ /*8.Generador de Lista de Cuadrados*/
+List<int> generarListaCuadrados() {
+  return List.generate(10, (index) => 
+                       (index + 1) * (index + 1));
+}
+ /*9. Calculadora Personalizada*/
+double calculadoraPersonalizada(double a, double b, String operacion) {
+  switch (operacion) {
+    case 'suma':
+      return a + b;
+    case 'resta':
+      return a - b;
+    case 'multiplicacion':
+      return a * b;
+    case 'division':
+      if (b != 0) {
+        return a / b;
+      } else {
+        throw Exception('No se puede dividir por cero');
+      }
+    default:
+      throw Exception('Operación no válida');
+  }  
+}
+  /*10. Función Recursiva - Factorial*/
+int factorial(int n) {
+  if (n == 0 || n == 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+/*11. Calculadora de Descuento*/
+double calcularDescuento(double montoOriginal, 
+  double porcentajeDescuento) {
+  double descuento = montoOriginal 
+    * (porcentajeDescuento / 100);
+  return montoOriginal - descuento;
+}
+
+/*12.Contador de Caracteres Alfabéticos*/
+int contarCaracteresAlfabeticos(String cadena) {
+  int contador = 0;
+  for (int i = 0; i < cadena.length; i++) {
+    if (cadena[i].toUpperCase() != cadena[i].toLowerCase()) {
+      contador++;
+    }
+  }
+  return contador;
+}
+/*13. Generador de Contraseñas Aleatorias*/
+/*import 'dart:math;'*/
+
+String generarContrasena(int longitud) {
+  const caracteres = "abcdefghijklmnopqrstuvwxyz0123456789";
+  String contrasena = "";
+  final random = Random();
+  for (int i = 0; i < longitud; i++) {
+    int index = random.nextInt(caracteres.length);
+    contrasena += caracteres[index];
+  }
+  return contrasena;
+}
+
+/*14. Buscador de Máximo y Mínimo en una Lista de Números*/
+List<num> buscarMaximoMinimo(List<num> numeros) {
+  num maximo = numeros[0];
+  num minimo = numeros[0];
+  for (num numero in numeros) {
+    if (numero > maximo) {
+      maximo = numero;
+    }
+    if (numero < minimo) {
+      minimo = numero;
+    }
+  }
+  return [maximo, minimo];
+}
+/*15. Función de Aprobación para Calificaciones*/
+bool aprobacion(List<int> calificaciones) {
+  for (int calificacion in calificaciones) {
+    if (calificacion < 5) {
+      return false;
+    }
+  }
+  return true;
+}
+/*Diego armando maza churio*/
+
